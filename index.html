@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Improves visibility */
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .login-button {
+    display: inline-block;
+    background-color: #ff5722; /* Vibrant color for the button */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.login-button:hover {
+    background-color: #e64a19; /* Slightly darker on hover */
+    transform: scale(1.1); /* Enlarge slightly on hover */
+}
+
+.login-button:active {
+    transform: scale(1); /* Reset size when clicked */
+}
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="static/AdobeStock_692808019_Video_4K_Preview.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content">
+        <h1>Course Recommendation</h1>
+        <p>For CSE Students</p>
+        <a href="{{ url_for('login') }}" class="login-button">Go to Login Page</a>
+    </div>
+</body>
+</html>
